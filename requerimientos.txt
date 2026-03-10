@@ -1,0 +1,241 @@
+s básicamente un sistema tipo , donde organizadores crean eventos y usuarios compran boletos.
+
+
+
+1. Diagrama de Casos de Uso
+
+Representa .
+Actores
+
+    Usuario
+    Organizador
+    Administrador
+    Sistema de pagos externo
+
+
+Casos de uso
+
+    Registrarse
+    Iniciar sesión
+    Crear evento
+    Comprar boleto
+    Descargar boleto
+    Administrar eventos
+    Procesar pago
+    Generar reportes
+
+
+
+2. Diagrama de Clases
+
+Define .
+Clases principales
+
+
+    id
+    nombre
+    email
+    password
+    id
+    titulo
+    fecha
+    ubicacion
+    capacidad
+    id
+    codigoQR
+    estado
+    precio
+    id
+    total
+    fecha
+    id
+    metodo
+    estado
+
+Relaciones:
+
+Usuario → crea → Evento
+
+Usuario → compra → Boleto
+
+Orden → contiene → Boletos
+
+Orden → genera → Pago
+
+3. Diagrama de Objetos
+
+  Es una .  
+
+Ejemplo:
+
+
+usuario1 : Usuario
+nombre = "Carlos"
+
+evento1 : Evento
+titulo = "Comic Fest"
+
+boleto1 : Boleto
+codigoQR = "A3X9"
+estado = "activo"
+
+
+Relaciones:
+
+
+usuario1 → compra → boleto1
+boleto1 → pertenece → evento1
+
+
+4. Diagrama de Secuencia
+
+Muestra .
+Caso: Comprar boleto
+
+Secuencia:
+
+
+Usuario → WebApp : comprar boleto
+WebApp → SistemaEventos : verificar disponibilidad
+SistemaEventos → DB : consultar cupo
+DB → SistemaEventos : cupo disponible
+SistemaEventos → PagoAPI : procesar pago
+PagoAPI → SistemaEventos : pago aprobado
+SistemaEventos → DB : registrar boleto
+SistemaEventos → Usuario : enviar boleto QR
+
+
+5. Diagrama de Actividades
+
+Flujo del proceso de compra:
+
+
+Inicio
+↓
+Seleccionar evento
+↓
+Elegir cantidad de boletos
+↓
+Ingresar datos
+↓
+Procesar pago
+↓
+¿Pago aprobado?
+├─ No → cancelar
+└─ Sí → generar boleto
+↓
+Enviar boleto
+↓
+Fin
+
+
+6. Diagrama de Estados
+
+Estados de un boleto:
+
+
+Creado
+↓
+Disponible
+↓
+Reservado
+↓
+Pagado
+↓
+Usado
+
+
+También podría existir:
+
+
+Pagado → Cancelado
+
+
+7. Diagrama de Componentes
+
+Arquitectura del software.
+
+Componentes:
+
+
+Frontend Web
+API Backend
+Servicio de Pagos
+Servicio de Notificaciones
+Base de Datos
+Sistema QR
+
+
+Relaciones:
+
+
+Frontend → API
+API → DB
+API → Pagos
+API → Notificaciones
+
+
+8. Diagrama de Paquetes
+
+Organización del código.
+
+
+/presentation
+- controllers
+- views
+
+/application
+- servicios
+- validaciones
+
+/domain
+- entidades
+- reglas
+
+/infrastructure
+- base de datos
+- integraciones
+
+
+9. Diagrama de Despliegue
+
+Infraestructura del sistema.
+
+
+Usuario
+│
+Internet
+│
+Servidor Web
+│
+API Backend
+│
+Base de Datos
+│
+Servicio de Pagos (externo)
+
+
+10. Diagrama de Comunicación
+
+Interacciones simplificadas:
+
+
+Usuario → Frontend
+Frontend → API
+API → DB
+API → Pago
+API → Email Service
+
+
+11. Diagrama de Estructura Compuesta
+
+Interior de un componente complejo.
+
+Ejemplo:
+
+
+Sistema de Eventos
+├─ GestorEventos
+├─ GestorBoletos
+├─ GestorUsuarios
+└─ GestorPagos
