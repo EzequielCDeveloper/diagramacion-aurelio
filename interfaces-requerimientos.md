@@ -8,29 +8,27 @@ Esta interfaz sera igual tanto para usuario, admin, organizador, como para cualq
 
 Investigar autenticacion con firebase, para tenerlo en cuenta en el diseno de las interfaces. (solo aceptar autenticacion con google o facebook)
 
+```mermaid
 graph TD
-Start([Inicio Sesión]) --> Forgot{¿Olvidó<br/>Contraseña?}
-
-    %% Flujo: No olvidó contraseña
-    Forgot -- No --> Credentials[Introducir credenciales]
-    Credentials --> Encrypt[Encriptar Password]
-    Encrypt --> Validate[Validar con Hash de BD]
-    Validate --> Compare{¿Es igual?}
-
-    Compare -- No --> Negation[Enviar negación]
-    Negation --> Reenter[Volver a introducir datos]
-    Reenter --> Encrypt
-
-    Compare -- Si --> OK[Retornar OK]
-    OK --> Logged[Logearse]
-
-    %% Flujo: Si olvidó contraseña
-    Forgot -- Si --> Email[Introduce correo]
-    Email --> Confirmation[Recibe confirmación por correo]
-    Confirmation --> UniqueToken[Token Único]
-    UniqueToken --> ClickLink[Hace clic enlace restauración]
-    ClickLink --> NewPass[Escribir contraseña nueva]
-    NewPass --> Forgot
+Start([Inicio Sesión]) --> Forgot{¿Olvidó\nContraseña?}
+%% Flujo: No olvidó contraseña
+Forgot -- No --> Credentials[Introducir credenciales]
+Credentials --> Encrypt[Encriptar Password]
+Encrypt --> Validate[Validar con Hash de BD]
+Validate --> Compare{¿Es igual?}
+Compare -- No --> Negation[Enviar negación]
+Negation --> Reenter[Volver a introducir datos]
+Reenter --> Encrypt
+Compare -- Si --> OK[Retornar OK]
+OK --> Logged[Logearse]
+%% Flujo: Si olvidó contraseña
+Forgot -- Si --> Email[Introduce correo]
+Email --> Confirmation[Recibe confirmación por correo]
+Confirmation --> UniqueToken[Token Único]
+UniqueToken --> ClickLink[Hace clic enlace restauración]
+ClickLink --> NewPass[Escribir contraseña nueva]
+NewPass --> Forgot
+```
 
 **Funciones:**
 
