@@ -1,0 +1,64 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.5.2 Safari/537.36" version="29.5.2">
+  <diagram name="Page-1" id="Ew-5jTK_-uPamL5VCGLW">
+    <mxGraphModel dx="1426" dy="912" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="IMGbprTleHGXk0Jh1iER-1" parent="1" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;" value="Sistema de Venta de Boletos" vertex="1">
+          <mxGeometry height="458" width="797" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="IMGbprTleHGXk0Jh1iER-2" parent="IMGbprTleHGXk0Jh1iER-1" style="whiteSpace=wrap;strokeWidth=2;" value="Frontend Web" vertex="1">
+          <mxGeometry height="54" width="166" x="46" y="221" as="geometry" />
+        </mxCell>
+        <mxCell id="IMGbprTleHGXk0Jh1iER-3" parent="IMGbprTleHGXk0Jh1iER-1" style="whiteSpace=wrap;strokeWidth=2;" value="API Backend" vertex="1">
+          <mxGeometry height="54" width="154" x="287" y="221" as="geometry" />
+        </mxCell>
+        <mxCell id="IMGbprTleHGXk0Jh1iER-4" parent="IMGbprTleHGXk0Jh1iER-1" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=10;strokeWidth=2;whiteSpace=wrap;" value="Base de Datos" vertex="1">
+          <mxGeometry height="76" width="122" x="580" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="IMGbprTleHGXk0Jh1iER-5" parent="IMGbprTleHGXk0Jh1iER-1" style="whiteSpace=wrap;strokeWidth=2;" value="Servicio de Pagos" vertex="1">
+          <mxGeometry height="54" width="191" x="545.5" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="IMGbprTleHGXk0Jh1iER-6" parent="IMGbprTleHGXk0Jh1iER-1" style="whiteSpace=wrap;strokeWidth=2;" value="Servicio de Notificaciones" vertex="1">
+          <mxGeometry height="54" width="251" x="515.5" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="IMGbprTleHGXk0Jh1iER-7" parent="IMGbprTleHGXk0Jh1iER-1" style="whiteSpace=wrap;strokeWidth=2;" value="Sistema QR" vertex="1">
+          <mxGeometry height="54" width="146" x="568" y="377" as="geometry" />
+        </mxCell>
+        <mxCell id="IMGbprTleHGXk0Jh1iER-8" edge="1" parent="IMGbprTleHGXk0Jh1iER-1" source="IMGbprTleHGXk0Jh1iER-2" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;rounded=0;" target="IMGbprTleHGXk0Jh1iER-3" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IMGbprTleHGXk0Jh1iER-9" edge="1" parent="IMGbprTleHGXk0Jh1iER-1" source="IMGbprTleHGXk0Jh1iER-3" style="curved=1;startArrow=none;endArrow=block;exitX=0.62;exitY=0;entryX=0;entryY=0.5;rounded=0;" target="IMGbprTleHGXk0Jh1iER-4" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="477" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IMGbprTleHGXk0Jh1iER-10" edge="1" parent="IMGbprTleHGXk0Jh1iER-1" source="IMGbprTleHGXk0Jh1iER-3" style="curved=1;startArrow=none;endArrow=block;exitX=0.88;exitY=0;entryX=0;entryY=0.5;rounded=0;" target="IMGbprTleHGXk0Jh1iER-5" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="478" y="196" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IMGbprTleHGXk0Jh1iER-11" edge="1" parent="IMGbprTleHGXk0Jh1iER-1" source="IMGbprTleHGXk0Jh1iER-3" style="curved=1;startArrow=none;endArrow=block;entryX=0;entryY=0.5;rounded=0;" target="IMGbprTleHGXk0Jh1iER-6" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="478" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IMGbprTleHGXk0Jh1iER-12" edge="1" parent="IMGbprTleHGXk0Jh1iER-1" source="IMGbprTleHGXk0Jh1iER-3" style="curved=1;startArrow=none;endArrow=block;exitX=0.63;exitY=1;entryX=0;entryY=0.5;rounded=0;" target="IMGbprTleHGXk0Jh1iER-7" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="478" y="404" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

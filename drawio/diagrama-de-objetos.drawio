@@ -1,0 +1,32 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.5.2 Safari/537.36" version="29.5.2">
+  <diagram name="Page-1" id="WuecYVfhXSBJMUzAZp2j">
+    <mxGraphModel dx="1426" dy="912" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="RXxg2bXih868B3BvfHq9-1" parent="1" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;" value="Instancias" vertex="1">
+          <mxGeometry height="603" width="330" x="20" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="RXxg2bXih868B3BvfHq9-2" parent="RXxg2bXih868B3BvfHq9-1" style="whiteSpace=wrap;strokeWidth=2;" value="usuario1 : Usuario&#xa;nombre = &#39;Carlos&#39;&#xa;email = &#39;carlos@email.com&#39;" vertex="1">
+          <mxGeometry height="126" width="260" x="43" y="46" as="geometry" />
+        </mxCell>
+        <mxCell id="RXxg2bXih868B3BvfHq9-3" parent="RXxg2bXih868B3BvfHq9-1" style="whiteSpace=wrap;strokeWidth=2;" value="boleto1 : Boleto&#xa;codigoQR = &#39;A3X9&#39;&#xa;estado = &#39;activo&#39;" vertex="1">
+          <mxGeometry height="102" width="195" x="76" y="271" as="geometry" />
+        </mxCell>
+        <mxCell id="RXxg2bXih868B3BvfHq9-4" parent="RXxg2bXih868B3BvfHq9-1" style="whiteSpace=wrap;strokeWidth=2;" value="evento1 : Evento&#xa;titulo = &#39;Comic Fest&#39;&#xa;fecha = &#39;2024-06-15&#39;" vertex="1">
+          <mxGeometry height="102" width="209" x="68" y="472" as="geometry" />
+        </mxCell>
+        <mxCell id="RXxg2bXih868B3BvfHq9-5" edge="1" parent="RXxg2bXih868B3BvfHq9-1" source="RXxg2bXih868B3BvfHq9-2" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="RXxg2bXih868B3BvfHq9-3" value="compra">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RXxg2bXih868B3BvfHq9-6" edge="1" parent="RXxg2bXih868B3BvfHq9-1" source="RXxg2bXih868B3BvfHq9-3" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="RXxg2bXih868B3BvfHq9-4" value="pertenece">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

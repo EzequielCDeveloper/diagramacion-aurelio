@@ -1,0 +1,81 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.5.2 Safari/537.36" version="29.5.2">
+  <diagram name="Page-1" id="2nOZCo0uxJe6fsVzmjZ-">
+    <mxGraphModel dx="1426" dy="912" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="JpjnVx5ooMzcxsk3DVWE-1" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};participant=umlActor;verticalAlign=bottom;labelPosition=center;verticalLabelPosition=top;align=center;size=65;" value="Usuario" vertex="1">
+          <mxGeometry height="592" width="35" x="20" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="JpjnVx5ooMzcxsk3DVWE-2" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" value="WebApp" vertex="1">
+          <mxGeometry height="592" width="150" x="220" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="JpjnVx5ooMzcxsk3DVWE-3" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" value="SistemaEventos" vertex="1">
+          <mxGeometry height="592" width="150" x="461" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="JpjnVx5ooMzcxsk3DVWE-4" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" value="DB" vertex="1">
+          <mxGeometry height="592" width="150" x="661" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="JpjnVx5ooMzcxsk3DVWE-5" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" value="PagoAPI" vertex="1">
+          <mxGeometry height="592" width="150" x="861" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="JpjnVx5ooMzcxsk3DVWE-6" edge="1" parent="1" source="JpjnVx5ooMzcxsk3DVWE-1" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="JpjnVx5ooMzcxsk3DVWE-2" value="comprar boleto">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="204" y="129" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JpjnVx5ooMzcxsk3DVWE-7" edge="1" parent="1" source="JpjnVx5ooMzcxsk3DVWE-2" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="JpjnVx5ooMzcxsk3DVWE-3" value="verificar disponibilidad">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="424" y="183" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JpjnVx5ooMzcxsk3DVWE-8" edge="1" parent="1" source="JpjnVx5ooMzcxsk3DVWE-3" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="JpjnVx5ooMzcxsk3DVWE-4" value="consultar cupo">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="645" y="237" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JpjnVx5ooMzcxsk3DVWE-9" edge="1" parent="1" source="JpjnVx5ooMzcxsk3DVWE-4" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" target="JpjnVx5ooMzcxsk3DVWE-3" value="cupo disponible">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="648" y="291" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JpjnVx5ooMzcxsk3DVWE-10" edge="1" parent="1" source="JpjnVx5ooMzcxsk3DVWE-3" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="JpjnVx5ooMzcxsk3DVWE-5" value="procesar pago">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="745" y="345" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JpjnVx5ooMzcxsk3DVWE-11" edge="1" parent="1" source="JpjnVx5ooMzcxsk3DVWE-5" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" target="JpjnVx5ooMzcxsk3DVWE-3" value="pago aprobado">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="748" y="399" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JpjnVx5ooMzcxsk3DVWE-12" edge="1" parent="1" source="JpjnVx5ooMzcxsk3DVWE-3" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="JpjnVx5ooMzcxsk3DVWE-4" value="registrar boleto">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="645" y="453" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JpjnVx5ooMzcxsk3DVWE-13" edge="1" parent="1" source="JpjnVx5ooMzcxsk3DVWE-3" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" target="JpjnVx5ooMzcxsk3DVWE-1" value="enviar boleto QR">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="327" y="507" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

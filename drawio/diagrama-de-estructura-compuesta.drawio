@@ -1,0 +1,44 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.5.2 Safari/537.36" version="29.5.2">
+  <diagram name="Page-1" id="SEVe-Hxr3y0OgWE38u9A">
+    <mxGraphModel dx="1426" dy="912" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Cm_96EkVNIx5IhFOTeg4-1" parent="1" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;" value="Sistema de Eventos" vertex="1">
+          <mxGeometry height="228" width="725" x="20" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Cm_96EkVNIx5IhFOTeg4-2" parent="Cm_96EkVNIx5IhFOTeg4-1" style="whiteSpace=wrap;strokeWidth=2;" value="GestorEventos" vertex="1">
+          <mxGeometry height="54" width="169" x="49" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="Cm_96EkVNIx5IhFOTeg4-3" parent="Cm_96EkVNIx5IhFOTeg4-1" style="whiteSpace=wrap;strokeWidth=2;" value="GestorBoletos" vertex="1">
+          <mxGeometry height="54" width="167" x="297" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="Cm_96EkVNIx5IhFOTeg4-4" parent="Cm_96EkVNIx5IhFOTeg4-1" style="whiteSpace=wrap;strokeWidth=2;" value="GestorUsuarios" vertex="1">
+          <mxGeometry height="54" width="177" x="46" y="147" as="geometry" />
+        </mxCell>
+        <mxCell id="Cm_96EkVNIx5IhFOTeg4-5" parent="Cm_96EkVNIx5IhFOTeg4-1" style="whiteSpace=wrap;strokeWidth=2;" value="GestorPagos" vertex="1">
+          <mxGeometry height="54" width="156" x="539" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="Cm_96EkVNIx5IhFOTeg4-6" edge="1" parent="Cm_96EkVNIx5IhFOTeg4-1" source="Cm_96EkVNIx5IhFOTeg4-2" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0.12;entryY=0;rounded=0;" target="Cm_96EkVNIx5IhFOTeg4-3" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="70" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Cm_96EkVNIx5IhFOTeg4-7" edge="1" parent="Cm_96EkVNIx5IhFOTeg4-1" source="Cm_96EkVNIx5IhFOTeg4-4" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0.12;entryY=1;rounded=0;" target="Cm_96EkVNIx5IhFOTeg4-3" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="174" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Cm_96EkVNIx5IhFOTeg4-8" edge="1" parent="Cm_96EkVNIx5IhFOTeg4-1" source="Cm_96EkVNIx5IhFOTeg4-3" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;rounded=0;" target="Cm_96EkVNIx5IhFOTeg4-5" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
