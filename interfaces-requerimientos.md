@@ -1,8 +1,188 @@
 # Requerimientos de cada interfaz
 
+## Flujo de navegación de interfaces
+
+### Flujo de navegación de Administrador
+
+```mermaid
+graph TD
+    %% Define styles for clarity, mirroring hand-drawn feel
+    classDef box fill:#fff,stroke:#333,stroke-width:1px;
+    classDef label fill:none,stroke:none;
+
+    %% Elements
+    Admin((Administrador))
+    Inicio[Login/Inicio]
+    LoginB[Login]:::box
+    IniciarSesion[Iniciar Sesión]:::box
+    VerEventos[Ver Eventos]:::box
+    VerEventoEspecifico[Ver Evento Específico]:::box
+    VerOrdenesEvento[Ver Ordenes de Evento]:::box
+    VerBoletos[Ver Boletos]:::box
+    VerUsuarios[Ver Usuarios]:::box
+    VerUsuarioEspecifico[Ver Usuario Específico]:::box
+    VerOrganizadores[Ver Organizadores]:::box
+    VerOrganizadorEspecifico[Ver Organizador Específico]:::box
+    EventosOrganizador[Eventos de Organizador]:::box
+    Transacciones[Transacciones]:::box
+    Dashboard[Dashboard]:::box
+    GestionarPagos[Gestionar Pagos]:::box
+    Soporte[Soporte]:::box
+    ListarEventos[Listar Eventos]:::box
+    ListarTickets[Listar Tickets]:::box
+    ListarTicketsGeneral[Listar Tickets en General]:::box
+
+    %% Connections
+    Admin --> Inicio
+    Inicio --> LoginB
+    LoginB --> IniciarSesion
+    IniciarSesion -.-> LoginB %% Dashed return, inferred
+
+    Inicio --> VerEventos
+    VerEventos --> VerEventoEspecifico
+    VerEventoEspecifico --> VerOrdenesEvento
+    VerOrdenesEvento --> VerBoletos
+
+    Inicio --> VerUsuarios
+    VerUsuarios --> VerUsuarioEspecifico
+    VerUsuarioEspecifico --> VerBoletos
+
+    Inicio --> VerOrganizadores
+    VerOrganizadores --> VerOrganizadorEspecifico
+    VerOrganizadorEspecifico --> EventosOrganizador
+
+    Inicio --> Transacciones
+    Transacciones --> Dashboard
+    Dashboard --> GestionarPagos
+
+    Inicio --> Soporte
+    Soporte --> ListarEventos
+    Soporte --> ListarTickets
+    ListarTickets --> ListarTicketsGeneral
+    ListarTicketsGeneral --> Soporte
+    ListarEventos --> ListarTickets
+```
+
+### Flujo de navegación de Organizador
+
+```mermaid
+graph TD
+    %% Define styles
+    classDef box fill:#fff,stroke:#333,stroke-width:1px;
+
+    %% Elements
+    Organizador((Organizador))
+    Inicio[Inicio]
+    VerEventos[Ver Eventos]:::box
+    VerEventoEspecifico[Ver Evento Específico]:::box
+    MisEventos[Mis Eventos]:::box
+    ListarEventos[Listar Eventos]:::box
+    EventoEspecificoDash[Evento Específico<br/>Dashboard]:::box
+    MiPerfil[Mi Perfil]:::box
+    ModificarDatos[Modificar Datos]:::box
+    BorrarCuenta[Borrar Cuenta]:::box
+    Soporte[Soporte]:::box
+    ListarTickets[Listar Tickets]:::box
+    TicketEspecifico[Ticket Específico]:::box
+    Reportes[Reportes]:::box
+    VerReportes[Ver Reportes]:::box
+    Cobrar[Cobrar]:::box
+    LoginB[Login]:::box
+    IniciarSesion[Iniciar Sesión]:::box
+    Registro[Registro<br/>Validación identidad]:::box
+
+    %% Connections
+    Organizador --> Inicio
+    Inicio --> VerEventos
+    VerEventos --> VerEventoEspecifico
+
+    Inicio --> MisEventos
+    MisEventos --> ListarEventos
+    ListarEventos --> EventoEspecificoDash
+
+    Inicio --> MiPerfil
+    MiPerfil --> ModificarDatos
+    ModificarDatos --> BorrarCuenta
+
+    Inicio --> Soporte
+    Soporte --> ListarTickets
+    ListarTickets --> TicketEspecifico
+
+    Inicio --> Reportes
+    Reportes --> VerReportes
+    VerReportes --> Cobrar
+    Cobrar --> Reportes
+
+    Inicio --> LoginB
+    LoginB --> IniciarSesion
+    LoginB --> Registro
+    Registro --> LoginB
+    IniciarSesion -.-> Inicio %% Dash for logical navigation return
+```
+
+### Flujo de navegación de Usuario normal
+
+```mermaid
+graph TD
+    %% Define styles, capturing red title
+    classDef box fill:#fff,stroke:#333,stroke-width:1px;
+    classDef redTitle color:red,fill:none,stroke:none;
+
+    %% Elements
+    Titulo[Secuencia: interfaces]:::redTitle
+    UsuarioNormal((Usuario normal))
+    Inicio[Inicio]
+    LoginB[Login]:::box
+    IniciarSesion[Iniciar Sesión]:::box
+    Registro[Registro]:::box
+    VerEventos[Ver Eventos]:::box
+    VerEventoEspecifico[Ver Evento Específico]:::box
+    Comprar[Comprar]:::box
+    ElegirBoleto[Elegir Boleto]:::box
+    Pagar[Pagar]:::box
+    MisBoletos[Ver Mis Boletos]:::box
+    InfoBoleto[Info Boleto]:::box
+    Descargar[Descargar]:::box
+    MiPerfil[Mi Perfil]:::box
+    ModificarDatos[Modificar Datos]:::box
+    BorrarCuenta[Borrar Cuenta]:::box
+    TerminosCondiciones[Términos y Condiciones]:::box
+    Privacidad[Privacidad]:::box
+    Ayuda[Ayuda]:::box
+    GenerarTicket[Generar Ticket]:::box
+
+    %% Connections
+    UsuarioNormal --> Inicio
+
+    Inicio --> LoginB
+    LoginB --> IniciarSesion
+    LoginB --> Registro
+
+    Inicio --> VerEventos
+    VerEventos --> VerEventoEspecifico
+    VerEventoEspecifico --> Comprar
+    Comprar --> ElegirBoleto
+    ElegirBoleto --> Pagar
+    Pagar --> InfoBoleto
+    InfoBoleto --> Descargar
+    Descargar --> Inicio
+
+    Inicio --> MisBoletos
+    MisBoletos --> InfoBoleto
+
+    Inicio --> MiPerfil
+    MiPerfil --> ModificarDatos
+    ModificarDatos --> BorrarCuenta
+
+    Inicio --> TerminosCondiciones
+    Inicio --> Privacidad
+    Inicio --> Ayuda
+    Ayuda --> GenerarTicket
+```
+
 ## Interfaces Usuario normal
 
-### Interfaz login:
+### Interfaz login
 
 Esta interfaz sera igual tanto para usuario, admin, organizador, como para cualquier otro tipo de roles. No es necesario rehacer para otros roles.
 
@@ -51,4 +231,1089 @@ NewPass --> Forgot
     - Direccion
     - RFC
     - Solicitud de confirmacion de identidad(fotografia) -> esta seccion dejarla pendiente, despues comunicare detalle cuando sepa qp.
-  - Agregar casilla de acepta terminos y condiciones, junto hipervinculo.
+  - Agregar casilla de acepta terminos y condiciones, junto hipervinculo.\
+
+## Interfaz Inicio/Main
+
+Esta sera la primera interfaz que vera todo usuario que quiera acceder a la aplicacion:
+Funciones:
+
+- `Acceso a login`
+
+- `Una nabvar lateral que incluya:`
+  -
+
+---
+
+# PLANTILLAS DE INTERFACES
+
+Esta sección contiene las plantillas para documentar cada interfaz del sistema.
+Llenar únicamente los espacios necesarios para cada interfaz.
+
+---
+
+## Login
+
+### Descripción
+[Propósito de la interfaz]
+
+### Acceso
+- Rol requerido: Público
+- Ruta: /login
+- Condiciones: Ninguna
+
+### Datos de Entrada
+- Correo electrónico: text - obligatorio - formato email
+- Contraseña: password - obligatorio - mínimo 8 caracteres
+
+### Funciones Disponibles
+- Iniciar sesión: valida credenciales → redirige a dashboard según rol
+- Recuperar contraseña: envía email → genera token → permite cambio
+- Registrarse: abre formulario registro → según rol elegido
+- Login con Google: OAuth → crea/accede cuenta → dashboard
+- Login con Facebook: OAuth → crea/accede cuenta → dashboard
+
+### Datos Mostrados
+- Logo aplicación
+- Título bienvenida
+- Links: términos, privacidad
+
+### Validaciones
+- [ ] Email debe tener formato válido
+- [ ] Contraseña debe tener mínimo 8 caracteres
+- [ ] Máximo 3 intentos fallidos antes de bloqueo temporal
+
+### Mensajes
+- Error credenciales: "Correo o contraseña incorrectos"
+- Error bloqueado: "Demasiados intentos, intenta en 15 minutos"
+- Éxito: "Bienvenido de vuelta"
+
+### Navegación
+- Dashboard Admin (si rol = admin)
+- Dashboard Organizador (si rol = organizador)
+- Catálogo Eventos (si rol = usuario)
+- Registro Usuario
+- Registro Organizador
+- Recuperar Contraseña
+
+---
+
+## Registro Usuario
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Registro Organizador
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Recuperar Contraseña
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Catálogo de Eventos
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Detalle de Evento
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Dashboard Usuario
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Proceso de Compra
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Selección de Boletos
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Pago
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Mis Boletos
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Descarga Boleto PDF
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Perfil Usuario
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Ayuda/Soporte Usuario
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Crear Ticket Soporte
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Dashboard Organizador
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Mis Eventos
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Detalle Evento Organizador
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Crear/Editar Evento
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Dashboard por Evento
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Reportes Financieros
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Perfil Organizador
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Soporte Organizador
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Proceso de Cobro
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Dashboard Admin
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Gestión de Eventos
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Detalle Evento Admin
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Gestión de Usuarios
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Perfil de Usuario (vista admin)
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Boletos de Usuario (vista admin)
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Gestión de Organizadores
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Perfil Organizador (vista admin)
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Eventos de Organizador (vista admin)
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Transacciones y Pagos
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
+
+## Soporte Admin
+
+### Descripción
+
+
+### Acceso
+- Rol requerido:
+- Ruta:
+- Condiciones:
+
+### Datos de Entrada
+
+
+### Funciones Disponibles
+
+
+### Datos Mostrados
+
+
+### Validaciones
+
+
+### Mensajes
+
+
+### Navegación
+
+
+---
