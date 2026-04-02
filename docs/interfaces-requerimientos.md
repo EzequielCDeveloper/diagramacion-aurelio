@@ -233,40 +233,27 @@ NewPass --> Forgot
     - Solicitud de confirmacion de identidad(fotografia) -> esta seccion dejarla pendiente, despues comunicare detalle cuando sepa qp.
   - Agregar casilla de acepta terminos y condiciones, junto hipervinculo.\
 
-## Interfaz Inicio/Main
-
-Esta sera la primera interfaz que vera todo usuario que quiera acceder a la aplicacion:
-Funciones:
-
-- `Acceso a login`
-
-- `Una nabvar lateral que incluya:`
-  -
-
----
-
-# PLANTILLAS DE INTERFACES
-
-Esta sección contiene las plantillas para documentar cada interfaz del sistema.
-Llenar únicamente los espacios necesarios para cada interfaz.
-
 ---
 
 ## Login
 
 ### Descripción
+
 [Propósito de la interfaz]
 
 ### Acceso
+
 - Rol requerido: Público
 - Ruta: /login
 - Condiciones: Ninguna
 
 ### Datos de Entrada
+
 - Correo electrónico: text - obligatorio - formato email
 - Contraseña: password - obligatorio - mínimo 8 caracteres
 
 ### Funciones Disponibles
+
 - Iniciar sesión: valida credenciales → redirige a dashboard según rol
 - Recuperar contraseña: envía email → genera token → permite cambio
 - Registrarse: abre formulario registro → según rol elegido
@@ -274,21 +261,25 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 - Login con Facebook: OAuth → crea/accede cuenta → dashboard
 
 ### Datos Mostrados
+
 - Logo aplicación
 - Título bienvenida
 - Links: términos, privacidad
 
 ### Validaciones
+
 - [ ] Email debe tener formato válido
 - [ ] Contraseña debe tener mínimo 8 caracteres
 - [ ] Máximo 3 intentos fallidos antes de bloqueo temporal
 
 ### Mensajes
+
 - Error credenciales: "Correo o contraseña incorrectos"
 - Error bloqueado: "Demasiados intentos, intenta en 15 minutos"
 - Éxito: "Bienvenido de vuelta"
 
 ### Navegación
+
 - Dashboard Admin (si rol = admin)
 - Dashboard Organizador (si rol = organizador)
 - Catálogo Eventos (si rol = usuario)
@@ -302,29 +293,45 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
-- Rol requerido:
-- Ruta:
-- Condiciones:
+
+- Rol requerido: publico
+- Ruta: /register
+- Condiciones: Usuario no registrado.
 
 ### Datos de Entrada
 
+- Correo electronico
+- Contraseña
+- nombre
+- Nacimiento
+- Numero
+- Direccion
 
 ### Funciones Disponibles
 
+- Validar datos unicos/correctos
+- Registrar usuarios en sistema
 
 ### Datos Mostrados
 
+- Logo de apicacion
+- Links: terminos y condiciones, privacidad.
+- formulario de solicitud de datos.
 
 ### Validaciones
 
+- Correo electronico unico en la BD.
+- Contraseña cumple con minimo de 8 caracteres.
+- marcar casilla de accepto terminos y condiciones.
 
 ### Mensajes
 
+- Error: "Este correo electronico ya esta en uso"
+- Error: "Minimo 8 caracteres debe tener la Contraseña"
+- Exito: "Te has registrado correctamente"
 
 ### Navegación
-
 
 ---
 
@@ -332,29 +339,48 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
+- Nombre
+- Correo
+- Contraseña
+- RFC
+- Nacimiento
+- Numero
+- Validacion de identidad
+- Nombre empresa
 
 ### Funciones Disponibles
 
+- Registro de Organizador
 
 ### Datos Mostrados
 
+- Logo de empresa
+- Links: terminos y condiciones, privacidad
 
 ### Validaciones
 
+- Validacion de correo unico
+- Contrasena cumple con 8 caracteres
+- Validacion de RFC
+- Validacion de nacimiento coincide con RFC
 
 ### Mensajes
 
+Error: Correo ya asociado
+Error: Contraseña no tiene 8 caracteres
+Error: RFC ya registrado
+Error: RFC no coincide con su dueno
+Exito: Te has registrado exitosamente
 
 ### Navegación
-
 
 ---
 
@@ -362,29 +388,42 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
+Esta interfaz, es para la recuperacion de contraseña de una cuenta asociada a un correo electronico.
 
 ### Acceso
-- Rol requerido:
-- Ruta:
-- Condiciones:
+
+- Rol requerido: Admin, Organizador, Usuario
+- Ruta: /recovery_password
+- Condiciones: Usuario haber introducido su correo electronico de su cuenta
 
 ### Datos de Entrada
 
+- Correo electronico
 
 ### Funciones Disponibles
 
+- Envio de correo de restauración
+- (asincronica), validacion de token de restauración
+- restauración de contraseña
 
 ### Datos Mostrados
 
+- Logo tipo de empresa
+- Links: termicos y condiciones, privacidad
 
 ### Validaciones
 
+- Validacion de correo electronico unico
+- validacion de token de restauración
 
 ### Mensajes
 
+Error: Este correo electronico no tiene una cuenta
+Error: La nueva contraseña no puede ser la anterior
+Error: La contraseña debe ser de al menos 8 caracteres
+Exito: Se ha restaurado tu contraseña
 
 ### Navegación
-
 
 ---
 
@@ -392,29 +431,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -422,29 +455,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -452,29 +479,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -482,29 +503,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -512,29 +527,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -542,29 +551,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -572,29 +575,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -602,29 +599,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -632,29 +623,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -662,29 +647,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -692,29 +671,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -722,29 +695,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -752,29 +719,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -782,29 +743,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -812,29 +767,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -842,29 +791,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -872,29 +815,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -902,29 +839,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -932,29 +863,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -962,29 +887,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -992,29 +911,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -1022,29 +935,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -1052,29 +959,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -1082,29 +983,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -1112,29 +1007,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -1142,29 +1031,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -1172,29 +1055,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -1202,29 +1079,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -1232,29 +1103,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -1262,29 +1127,23 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
 
@@ -1292,28 +1151,22 @@ Llenar únicamente los espacios necesarios para cada interfaz.
 
 ### Descripción
 
-
 ### Acceso
+
 - Rol requerido:
 - Ruta:
 - Condiciones:
 
 ### Datos de Entrada
 
-
 ### Funciones Disponibles
-
 
 ### Datos Mostrados
 
-
 ### Validaciones
-
 
 ### Mensajes
 
-
 ### Navegación
-
 
 ---
